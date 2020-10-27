@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import TodoGroup from "./TodoGroup";
-import TodoGenerator from "./TodoGenerator";
+import TodoGeneratorContainer from "../containers/TodoGeneratorContainer";
 
 class TodoList extends Component {
   render() {
     return (
       <div>
         <TodoGroup />
-        <TodoGenerator />
+        <TodoGeneratorContainer />
       </div>
     );
   }
