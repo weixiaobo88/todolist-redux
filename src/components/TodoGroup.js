@@ -3,10 +3,12 @@ import TodoItem from "./TodoItem";
 
 class TodoGroup extends Component {
   render() {
+    const { todoList } = this.props;
     return (
       <div>
-        TodoGroup
-        <TodoItem />
+        {todoList.map((item) => (
+          <TodoItem key={item.id} todoItem={item} />
+        ))}
       </div>
     );
   }
