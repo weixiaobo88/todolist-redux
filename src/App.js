@@ -1,12 +1,12 @@
 import React from "react";
-import MultiCounter from "./components/MultiCounter";
+import TodoList from "./components/TodoList";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <MultiCounter />
+        <TodoList />
       </header>
     </div>
   );
