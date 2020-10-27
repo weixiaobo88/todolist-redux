@@ -1,0 +1,15 @@
+.mark-done {
+  text-decoration: line-through;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+}
+
+.times {
+  text-align: right;
+  margin-right: 10px;
+}

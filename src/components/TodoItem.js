@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-
+import "./TodoItem.css";
 class TodoItem extends Component {
   constructor(props) {
     super(props);
-    this.onClick = this.onDelete.bind(this);
+    this.onDelete = this.onDelete.bind(this);
     this.onToggle = this.onToggle.bind(this);
   }
 
@@ -23,14 +23,18 @@ class TodoItem extends Component {
 
   render() {
     const {
-      todoItem: { text },
+      todoItem: { text, done },
     } = this.props;
     return (
       <React.Fragment>
-        <li>
-          <span onClick={this.onToggle}>{text}</span>
-          <span onClick={this.onDelete}>X</span>
-        </li>
+        <div className="todo">
+          <span className={done ? "mark-done" : ""} onClick={this.onToggle}>
+            {text}
+          </span>
+          <span className="times" onClick={this.onDelete}>
+            X
+          </span>
+        </div>
       </React.Fragment>
     );
   }
