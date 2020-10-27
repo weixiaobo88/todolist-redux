@@ -3,10 +3,18 @@ import React, { Component } from "react";
 class TodoItem extends Component {
   constructor(props) {
     super(props);
-    this.onClick = this.onClick.bind(this);
+    this.onClick = this.onDelete.bind(this);
+    this.onToggle = this.onToggle.bind(this);
   }
 
-  onClick() {
+  onToggle() {
+    const {
+      todoItem: { id },
+    } = this.props;
+    this.props.toggleTodoItem(id);
+  }
+
+  onDelete() {
     const {
       todoItem: { id },
     } = this.props;
@@ -20,8 +28,8 @@ class TodoItem extends Component {
     return (
       <React.Fragment>
         <li>
-          <span>{text}</span>
-          <span onClick={this.onClick}>X</span>
+          <span onClick={this.onToggle}>{text}</span>
+          <span onClick={this.onDelete}>X</span>
         </li>
       </React.Fragment>
     );

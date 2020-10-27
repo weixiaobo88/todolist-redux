@@ -13,6 +13,14 @@ const todoList = (state = [], action) => {
     ];
   } else if (action.type === "DELETE_TODO_ITEM") {
     return state.filter((todoItem) => todoItem.id !== action.id);
+  } else if (action.type === "TOGGLE_TODO_ITEM") {
+    const itemIndex = state.findIndex((item) => item.id === action.id);
+    let todoList = [...state];
+    todoList[itemIndex] = {
+      ...todoList[itemIndex],
+      done: !todoList[itemIndex].done,
+    };
+    return todoList;
   }
   return state;
 };
