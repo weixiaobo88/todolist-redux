@@ -11,6 +11,8 @@ const todoList = (state = [], action) => {
         done: false,
       },
     ];
+  } else if (action.type === "DELETE_TODO_ITEM") {
+    return state.filter((todoItem) => todoItem.id !== action.id);
   }
   return state;
 };

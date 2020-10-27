@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TodoItem from "./TodoItem";
+import TodoItemContainer from "../containers/TodoItemContainer";
 
 class TodoGroup extends Component {
   render() {
@@ -7,7 +7,7 @@ class TodoGroup extends Component {
     return (
       <div>
         {todoList.map((item) => (
-          <TodoItem key={item.id} todoItem={item} />
+          <TodoItemContainer key={item.id} todoItem={item} />
         ))}
       </div>
     );
